@@ -44,6 +44,7 @@ namespace AdmissionForm.Controllers
                     ViewBag.InsertMessage = "<script>alert('Data Not Inserted')</script>";
                 }
             }
+
                            return View();
             
             
