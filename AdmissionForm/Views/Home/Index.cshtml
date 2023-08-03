@@ -1,0 +1,58 @@
+﻿@model IEnumerable<AdmissionForm.Models.Emp>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>@TempData["Succussc"]</p>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeAge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeGender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployePassWord)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeAge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeGender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployePassWord)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EmployeId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EmployeId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EmployeId })
+        </td>
+    </tr>
+}
+
+</table>
